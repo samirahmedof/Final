@@ -5,7 +5,8 @@
         font-weight: 600;
         line-height: 66px;
         padding: 0px 20px;
-        display: inline-block; 
+        display: inline-block;
+        @include transition(0.15s); 
         &:hover {
             background-color: rgba(0,0,0,.04);
         }
@@ -14,7 +15,7 @@
 
 //header
 header {
-    border-bottom: 1px solid rgba(0,0,0,.1);;
+    border-bottom: 1px solid $border;
     .container-fluid {
         .container {
             .row {
@@ -66,16 +67,16 @@ header {
                                 .col-lg-2 {
                                     padding: 0px;
                                     a {
-                                        color: darken($gray, 20);
+                                        color: gray;
                                         line-height: 10px;
                                         font-weight: 400;
-                                        @include transition(0.1s);
+                                        @include transition(0.15s);
                                         &:hover {
                                             background: $white;
-                                            color: darken($pColor,30);
+                                            color: $hovered;
                                         }
                                     }
-                                    .heading {
+                                    .headingCategories {
                                         color: $black;
                                         font-weight: 600;
                                     }
@@ -144,7 +145,7 @@ header {
                             left: -125px;
                             ul {
                                 li {
-                                    border-bottom: 1px solid lighten($gray,20);
+                                    border-bottom: 1px solid $border;
                                     padding: 10px;
                                     .col-lg-4 {
                                         a {
@@ -164,20 +165,21 @@ header {
                                             padding: 0;
                                             line-height: 25px;
                                             width: auto;
+                                            @include transition(0.15s);
                                             &:hover {
                                                 background: none;
-                                                color: darken($pColor,30);
+                                                color: $hovered;
                                             }
                                         }
                                         p {
                                             margin: 0;
-                                            font-size: 12px;
+                                            font-size: $textXS;
                                             color: $gray;
                                             line-height: 15px;
                                         }
                                         span {
                                             font-weight: 700;
-                                            font-size: 12px;
+                                            font-size: $textXS;
                                             line-height: 35px;
                                         }
                                         i {
@@ -185,10 +187,11 @@ header {
                                             right: 20px;
                                             top: 7px;
                                             color: $gray;
-                                            font-size: 12px;
+                                            font-size: $textXS;
                                             cursor: pointer;
+                                            @include transition(0.15s);
                                             &:hover {
-                                                color: darken($pColor,30);
+                                                color: $red;
                                             }
                                         }
                                     }
@@ -202,16 +205,14 @@ header {
                                         a {
                                             line-height: 1;
                                             padding: 10px;
-                                            font-size: 14px;
+                                            font-size: $text;
+                                            @include transition(0.15s);
                                             &:hover {
-                                                background-color: $sColor;
+                                                background-color: $lightBlack;
                                                 color: $white;
                                             }
                                         }
-                                        .btn2 {
-                                            background-color: darken($bgColor,10);
-                                            border-color: darken($bgColor,10);
-                                        }
+                                        
                                     }
                                     .text-right {
                                         p {
@@ -268,7 +269,7 @@ header {
                             }
                             .btnSearch {
                                 right: 80px;
-                                border-right: 1px solid lighten($gray,20);
+                                border-right: 1px solid $border;
                                 border-radius: 0;                           
                             }
                             
@@ -281,3 +282,107 @@ header {
 }
 
 //footer
+footer {
+    .mainRow {
+        border-top: 1px solid $border;
+        border-bottom: 1px solid $border;
+        padding: 50px 0px;
+        .col-lg-4 {
+            .content {               
+                p {
+                    color: lighten($black,30);
+                    margin: 0;
+                    padding: 0px 30px 20px 0px;
+                }
+                a {
+                    display: block;
+                    font-size: $textS;
+                    font-weight: 600;
+                    line-height: 2;
+                    @include transition (0.15s);
+                    &:hover {
+                        color: $hovered;
+                    }
+                }
+            }
+            .follow {
+                p {
+                    padding-right: 0;
+                }
+                form {
+                    input {
+                        width: 65%;
+                        border-radius: 1.5px;
+                        background: $sColor;
+                        display: inline-block;
+                        &:focus {
+                            outline: none;
+                            background: $white;
+                            box-shadow: none;
+                            border-color: $border;
+                        }
+                        
+                    }
+                    button {
+                        border: none;
+                        padding: 11px 20px;
+                        &:focus {
+                            outline: none;
+                            box-shadow: none;
+                        }
+                    }
+                }
+                .socials {
+                    a {
+                        display: inline-block;
+                        width: 28px;
+                        height: 28px;
+                        line-height: 28px;
+                        margin-right: 3px;
+                        text-align: center;
+                        color: $lightBlack;
+                        @include transition(0.15s);
+                        i{
+                            font-size: 16px;
+                        }
+                        &:hover {
+                            background: $sColor;
+                        }
+                    }
+                }
+            }
+        }
+        .col-lg-2 {
+            .content {
+                ul {
+                    padding: 0;
+                    li {
+                        line-height: 20px;
+                        padding-bottom: 7px;
+                        a {
+                            color: lighten($black,30);
+                            @include transition(0.15s);
+                            &:hover {
+                                color: $hovered;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .created {
+        padding: 15px 0px;
+        a {
+            font-size: $textS;
+            color: lighten($black,30);
+            @include transition (0.15s);
+            &:hover {
+                color: $hovered;
+            }
+        }
+        span {
+            font-size: $textS;
+        }
+    }
+}

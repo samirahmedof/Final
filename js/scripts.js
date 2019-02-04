@@ -38,6 +38,10 @@ $(document).ready(function () {
         items: 4,
         nav: true
     });
+    $(".slide3").owlCarousel({
+        items: 3,
+        nav: true
+    });
 
     $(".stars .fas").click(function(){
         $(this).addClass("clicked");

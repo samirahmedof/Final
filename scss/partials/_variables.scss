@@ -2,15 +2,27 @@
 $font: 'Open Sans', sans-serif;
 
 //size
+$textXS: 12px;
+$textS: 13px;
 $text: 14px;
-$text2: 15px;
-$heading: 30px;
+$textL: 15px;
 
 //color
+$pColor: #ffd599;
+$sColor: #cfdee5;
 $bgColor: #e6eef2;
+$border: rgba(0, 0, 0, 0.1);
+$hovered: darken($pColor,30);
+
 $black: #333;
+$lightBlack:#576166;
 $white: #fff;
 $red: #ff5959;
 $gray: #b2b2b2;
-$pColor: #ffd599;
-$sColor: #576166;
+$green: #a5d28f;
+$yellow: #e5b85c;
+$blue: #7eb2e6;
+
+
+
+
