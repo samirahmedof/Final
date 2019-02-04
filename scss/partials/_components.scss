@@ -1,0 +1,164 @@
+.active {
+    visibility: visible;
+    z-index: 10;
+} 
+
+.btn1 {
+    line-height: 1;
+    background-color: $pColor;
+    border-color: $pColor;
+    padding: 10px;
+    font-size: $text;
+    border-radius: 1.5px;
+    font-weight: 600;
+    @include transition(0.3s);
+    &:hover {
+        background-color: $sColor;
+        color: $white;
+        border-color: $sColor;
+    }
+}
+.heading {
+    margin-bottom: 50px;
+    .col-lg-12 {
+        h2 {
+            font-size: 30px;
+            font-weight: 700;
+            letter-spacing: -1px;
+            line-height: 0;
+        }
+        span {
+            background: $pColor;
+            width: 50px;
+            height: 2px;
+            display: inline-block;
+        }
+    }
+}
+.col-lg-12 {
+    padding: 0px 7px;
+    .card {
+        box-shadow: 1px 1px 5px #80808038;
+        padding: 15px;
+        border-radius: 1.5px;
+        overflow: hidden;
+        .cardHead {
+            a {
+                img {
+                    width: 100%;
+                }
+            }
+            .rightHover {
+                position: absolute;
+                top: 5px;
+                right: -25px;
+                opacity: 0;
+                @include transition(0.2s);
+                a {
+                    display: block;
+                    i {
+                        color: $gray;
+                        font-size: 15px;
+                        padding: 7px;
+                        @include transition(0.1s);
+                        &:hover {
+                            color: $black;
+                            background: $bgColor;
+                        }
+                    }
+                    
+                }
+            }
+        }
+        .cardBody {
+            padding: 7px;
+            a {
+                span {
+                    color: $gray;
+                    font-size: 12px;
+                    font-weight: 600;
+
+                    @include transition(0.1s);
+                    &:hover{
+                        color: darken($pColor,25);
+                    }
+                }
+                p {
+                    font-weight: 700;
+                    font-size: 14px;
+                    margin: 0;
+                    @include transition(0.1s);
+                    &:hover{
+                        color: darken($pColor,25);
+                    }
+                }
+                
+                
+            }
+            .price {
+                font-size: 15px;
+                font-weight: 700;
+            }
+            .new {
+                color: $red;
+            }
+            .last {
+                text-decoration-line: line-through;
+                font-weight: 400;
+                font-size: 13px;
+                color: gray;
+            }
+            .bottomHover {
+                position: absolute;
+                left: 7px;
+                bottom: -35px;
+                opacity: 0;
+                width: 95%;   
+                @include transition(0.2s);
+                a {
+                    display: inline-block;
+                    width: 100%;
+                }         
+            }
+        }
+        .other {
+            position: absolute;
+            top: 0;
+            color: white;
+            span {
+                width: 60px;
+                height: 25px;
+                line-height: 25px;
+                display: inline-block;
+                font-weight: 600;
+                font-size: 13px;
+            }
+            .sale {
+                background: $red;
+            }
+            .new {
+                background: #5990ff;
+            }
+        }
+        &:hover {
+            .rightHover {
+                right: 5px;
+                opacity: 1;
+            }
+            .bottomHover {
+                bottom: 7px;
+                opacity: 1;
+            }
+        }
+    }
+}
+.stars {
+    .fa-star {
+        color: $gray;
+        font-size: 12px;
+        cursor: pointer;
+    }
+    .starred {
+        color: #ffd333;
+    }
+}

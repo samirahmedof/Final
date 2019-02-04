@@ -1,0 +1,283 @@
+//inheritance
+%navItem {
+    display: inline-block;
+    a {
+        font-weight: 600;
+        line-height: 66px;
+        padding: 0px 20px;
+        display: inline-block; 
+        &:hover {
+            background-color: rgba(0,0,0,.04);
+        }
+    }
+}
+
+//header
+header {
+    border-bottom: 1px solid rgba(0,0,0,.1);;
+    .container-fluid {
+        .container {
+            .row {
+                .col-lg-10 {
+                    padding: 0;
+                    a {
+                        img {
+                            max-width: 10%;
+                        }
+                    }
+                    ul {
+                        display: inline-block;
+                        margin: 0px;
+                        padding: 0px 15px;
+                        li {
+                            @extend %navItem;
+                        }
+                        .drop {
+                            @extend %navItem;
+                            position: relative;
+                            &:after {
+                                content: "\f107";
+                                font-family: 'Font Awesome 5 Free';
+                                position: absolute;
+                                right: 5px;
+                                top: 23px;
+                                font-weight: 900;
+                                color: $gray;
+                            }
+                            .right-drop {
+                                position: relative;
+                                &::after {
+                                    content: "\f105";
+                                    font-family: 'Font Awesome 5 Free';
+                                    position: absolute;
+                                    right: 20px;
+                                    font-weight: 900;
+                                    color: $gray;
+                                }
+                            }
+                            .down2 {
+                                left: 190px;
+                                top: 0px;
+                            }
+                            .down-categories {
+                                width: 1110px;
+                                left: -190px;
+                                padding: 30px;
+                                .col-lg-2 {
+                                    padding: 0px;
+                                    a {
+                                        color: darken($gray, 20);
+                                        line-height: 10px;
+                                        font-weight: 400;
+                                        @include transition(0.1s);
+                                        &:hover {
+                                            background: $white;
+                                            color: darken($pColor,30);
+                                        }
+                                    }
+                                    .heading {
+                                        color: $black;
+                                        font-weight: 600;
+                                    }
+                                }
+                                .col-lg-4 {
+                                    padding: 0;
+                                    a {
+                                        height: 100%;
+                                        padding: 0;
+                                        img {
+                                            max-width: 105%;
+                                        }
+                                    }
+                                }
+                            }
+                               
+                            
+                        }
+                    }
+                    .drop {
+                        .down {
+                            a {
+                                line-height: 15px;
+                                padding: 7px 20px;
+                            }
+                            ul {
+                                padding: 10px 0px;
+                            }
+                        }
+                    }
+                }
+                .col-lg-2 {
+                    ul {
+                        padding: 0;
+                        margin: 0;
+                        li {
+                            @extend %navItem;
+                            a {
+                                padding: 0px 10px;
+                                position: relative;
+                                i {
+                                    font-size: 20px;
+                                }
+                                .fa-shopping-cart{
+                                    &::after{
+                                        content: "2";
+                                        position: absolute;
+                                        border-radius: 100%;
+                                        width: 15px;
+                                        height: 15px;
+                                        font-size: 11px;
+                                        background-color: $pColor;
+                                        text-align: center;
+                                        line-height: 15px;
+                                        top: 13px;
+                                        right: 0;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .drop {
+                        display: inline-block;
+                        .down {
+                            width: 300px;
+                            left: -125px;
+                            ul {
+                                li {
+                                    border-bottom: 1px solid lighten($gray,20);
+                                    padding: 10px;
+                                    .col-lg-4 {
+                                        a {
+                                            padding: 0;
+                                            img {
+                                                max-width: 80%;
+                                            }
+                                            &:hover {
+                                                background: none;
+                                            }
+                                        }
+                                    }
+                                    .col-lg-8 {
+                                        position: relative;
+                                        padding: 0;
+                                        a {
+                                            padding: 0;
+                                            line-height: 25px;
+                                            width: auto;
+                                            &:hover {
+                                                background: none;
+                                                color: darken($pColor,30);
+                                            }
+                                        }
+                                        p {
+                                            margin: 0;
+                                            font-size: 12px;
+                                            color: $gray;
+                                            line-height: 15px;
+                                        }
+                                        span {
+                                            font-weight: 700;
+                                            font-size: 12px;
+                                            line-height: 35px;
+                                        }
+                                        i {
+                                            position: absolute;
+                                            right: 20px;
+                                            top: 7px;
+                                            color: $gray;
+                                            font-size: 12px;
+                                            cursor: pointer;
+                                            &:hover {
+                                                color: darken($pColor,30);
+                                            }
+                                        }
+                                    }
+                                    .col-lg-6 {
+                                        p {
+                                            line-height: 0px;
+                                            padding: 5px;
+                                            color: $gray;
+                                            font-weight: 600;
+                                        }
+                                        a {
+                                            line-height: 1;
+                                            padding: 10px;
+                                            font-size: 14px;
+                                            &:hover {
+                                                background-color: $sColor;
+                                                color: $white;
+                                            }
+                                        }
+                                        .btn2 {
+                                            background-color: darken($bgColor,10);
+                                            border-color: darken($bgColor,10);
+                                        }
+                                    }
+                                    .text-right {
+                                        p {
+                                            color: $black;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        .search {
+                            position: absolute;
+                            top: 0;
+                            width: 1150px;
+                            right: 0px;
+                            display: none;
+                            .row {
+                                margin: 0;
+                                .col-lg-12 {
+                                    input {
+                                        padding: 33px;
+                                        border-radius: 1.5px;
+                                        font-size: 22px;
+                                        font-weight: 600;
+                                        &:focus {
+                                            border-color: $white;
+                                            box-shadow: 0px 3px 10px #00000040;
+                                        }
+                                        &::placeholder {
+                                            color: $gray;
+                                        }
+                                    }
+                                }
+                            }
+                            button {
+                                position: absolute;
+                                top: 0px;
+                                right: 15px;
+                                height: 100%;
+                                padding: 25px;
+                                i {
+                                    font-size: 20px;
+                                    color: $gray;
+                                    @include transition(0.5s);
+                                
+                                }
+                                &:hover {
+                                    i {
+                                        color: $black;
+                                    }
+                                }
+                                &:focus{
+                                    box-shadow: none;
+                                }
+                            }
+                            .btnSearch {
+                                right: 80px;
+                                border-right: 1px solid lighten($gray,20);
+                                border-radius: 0;                           
+                            }
+                            
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+//footer
